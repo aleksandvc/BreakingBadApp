@@ -13,6 +13,9 @@
 		2EA9869024D992E900130DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9868E24D992E900130DDF /* Main.storyboard */; };
 		2EA9869224D992EC00130DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9869124D992EC00130DDF /* Assets.xcassets */; };
 		2EA9869524D992EC00130DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9869324D992EC00130DDF /* LaunchScreen.storyboard */; };
+		2EA9869E24D993D700130DDF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA9869D24D993D700130DDF /* NetworkManager.swift */; };
+		2EA986A124D9956D00130DDF /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA986A024D9956D00130DDF /* Character.swift */; };
+		2EA986A424D9A2C900130DDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA986A324D9A2C900130DDF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		2EA9869124D992EC00130DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EA9869424D992EC00130DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EA9869624D992EC00130DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA9869D24D993D700130DDF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2EA986A024D9956D00130DDF /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		2EA986A324D9A2C900130DDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 		2EA9868724D992E900130DDF /* BreakingBadApp */ = {
 			isa = PBXGroup;
 			children = (
+				2EA986A224D9A2B600130DDF /* Utils */,
+				2EA9869F24D9955E00130DDF /* Model */,
+				2EA9869C24D993AC00130DDF /* Networking */,
 				2EA9868824D992E900130DDF /* AppDelegate.swift */,
 				2EA9868A24D992E900130DDF /* SceneDelegate.swift */,
 				2EA9868C24D992E900130DDF /* ViewController.swift */,
@@ -65,6 +74,30 @@
 				2EA9869624D992EC00130DDF /* Info.plist */,
 			);
 			path = BreakingBadApp;
+			sourceTree = "<group>";
+		};
+		2EA9869C24D993AC00130DDF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2EA9869D24D993D700130DDF /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2EA9869F24D9955E00130DDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EA986A024D9956D00130DDF /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EA986A224D9A2B600130DDF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2EA986A324D9A2C900130DDF /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA9869E24D993D700130DDF /* NetworkManager.swift in Sources */,
 				2EA9868D24D992E900130DDF /* ViewController.swift in Sources */,
+				2EA986A124D9956D00130DDF /* Character.swift in Sources */,
 				2EA9868924D992E900130DDF /* AppDelegate.swift in Sources */,
 				2EA9868B24D992E900130DDF /* SceneDelegate.swift in Sources */,
+				2EA986A424D9A2C900130DDF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
