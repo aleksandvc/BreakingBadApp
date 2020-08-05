@@ -20,6 +20,7 @@
 		2EA986A924DAA10600130DDF /* AllCharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA986A824DAA10600130DDF /* AllCharactersViewModel.swift */; };
 		2EA986AC24DAB6E500130DDF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA986AB24DAB6E500130DDF /* FilterView.swift */; };
 		2EA986AE24DAB6F600130DDF /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA986AD24DAB6F600130DDF /* FilterView.xib */; };
+		2EA986B624DAECD100130DDF /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA986B524DAECD100130DDF /* MoreInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2EA986A824DAA10600130DDF /* AllCharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersViewModel.swift; sourceTree = "<group>"; };
 		2EA986AB24DAB6E500130DDF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		2EA986AD24DAB6F600130DDF /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		2EA986B524DAECD100130DDF /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		77242F2CC8602C3E87E0B64E /* Pods-BreakingBadApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadApp.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadApp/Pods-BreakingBadApp.release.xcconfig"; sourceTree = "<group>"; };
 		88998961626FA855BD227A26 /* Pods_BreakingBadApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBadApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F8C02BCCECEE59D4478485 /* Pods-BreakingBadApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadApp.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadApp/Pods-BreakingBadApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		2EA9868724D992E900130DDF /* BreakingBadApp */ = {
 			isa = PBXGroup;
 			children = (
+				2EA986B424DAECAF00130DDF /* MoreInfoModule */,
 				2EA986AA24DAB6BF00130DDF /* CustomViews */,
 				2EA986A524DA9D6A00130DDF /* AllCharactersModule */,
 				2EA986A224D9A2B600130DDF /* Utils */,
@@ -138,6 +141,14 @@
 				2EA986AD24DAB6F600130DDF /* FilterView.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		2EA986B424DAECAF00130DDF /* MoreInfoModule */ = {
+			isa = PBXGroup;
+			children = (
+				2EA986B524DAECD100130DDF /* MoreInfoViewController.swift */,
+			);
+			path = MoreInfoModule;
 			sourceTree = "<group>";
 		};
 		A826A1BA5912CB43CADA7DB5 /* Pods */ = {
@@ -271,6 +282,7 @@
 				2EA9868924D992E900130DDF /* AppDelegate.swift in Sources */,
 				2EA986AC24DAB6E500130DDF /* FilterView.swift in Sources */,
 				2EA9868B24D992E900130DDF /* SceneDelegate.swift in Sources */,
+				2EA986B624DAECD100130DDF /* MoreInfoViewController.swift in Sources */,
 				2EA986A724DA9DB200130DDF /* AllCharactersViewController.swift in Sources */,
 				2EA986A424D9A2C900130DDF /* Constants.swift in Sources */,
 			);

@@ -57,11 +57,32 @@ class AllCharactersViewController: UIViewController {
         self.view.bringSubviewToFront(indicator)
         return indicator
     }
+    
+    func presentMoreInfoScreen(characterImage: UIImage, characterName: String, characterOccupation: String, characterStatus: String, characterNickname: String, characterAppearance: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let moreInfoVC = storyboard.instantiateViewController(withIdentifier: "MoreInfoViewController") as? MoreInfoViewController else { return }
+        moreInfoVC.setupViewController(characterImage: characterImage, characterName: characterName, characterOccupation: characterOccupation, characterStatus: characterStatus, characterNickname: characterNickname, characterAppearance: characterAppearance)
+        DispatchQueue.main.async {
+            self.present(moreInfoVC, animated: true, completion: nil)
+        }
+    }
 }
 
 extension AllCharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Present screen with more info
+        let character = isSearching ? viewModel.searchedCharacters[indexPath.row] : viewModel.characters.value[indexPath.row]
+        var occupation = ""
+        var appearance = ""
+        for entry in character.occupation {
+            occupation = "\(occupation)  \(entry)"
+        }
+        
+        for season in character.appearance {
+            appearance = "\(appearance) \(season)"
+        }
+        
+        presentMoreInfoScreen(characterImage: viewModel.images[indexPath.row], characterName: character.name, characterOccupation: occupation, characterStatus: character.status, characterNickname: character.nickname, characterAppearance: appearance)
+        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: false)
     }
 }
 
