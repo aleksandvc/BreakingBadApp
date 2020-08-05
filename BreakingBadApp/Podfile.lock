@@ -1,0 +1,22 @@
+PODS:
+  - Bondage (1.0.1)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+
+DEPENDENCIES:
+  - Bondage
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Bondage
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Bondage: 2e0bfd07265075668e95b792d22c1adf6d6c2f72
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+
+PODFILE CHECKSUM: 8bafde12437510d2534133d57a8dec900a5f75c8
+
+COCOAPODS: 1.9.3
