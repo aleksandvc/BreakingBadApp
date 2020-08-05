@@ -11,7 +11,7 @@ import UIKit
 
 class NetworkManager {
     
-    func getAllCharacters(presenter: UIViewController, completion: (([Character]?, Bool)->())?) {
+    func getAllCharacters(presenter: UIViewController, completion:@escaping (([Character]?)->())) {
         guard let url = URL(string: Urls.getCharactersUrl) else { return }
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -23,7 +23,7 @@ class NetworkManager {
                     let charactersArray = try decoder.decode([Character].self,
                                                    from: dataResponse)
                     
-                    completion?(charactersArray, true)
+                    completion(charactersArray)
                 } catch let parsingError {
                     print("Error", parsingError)
                 }
@@ -36,7 +36,6 @@ class NetworkManager {
                     alert.addAction(action)
                     
                     presenter.present(alert, animated: false, completion: nil)
-                    completion?(nil, false)
                 }
             }
         })

@@ -1,24 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--All Characters View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AllCharactersViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search character" translatesAutoresizingMaskIntoConstraints="NO" id="iiT-N2-JPf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GhU-d9-06D"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8lj-pJ-78Y"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VpL-p5-MSd">
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Xu9-DE-Ti1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aHS-vd-c0x"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04E-RR-xN7" customClass="FilterView" customModule="BreakingBadApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="74" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VpL-p5-MSd" firstAttribute="top" secondItem="04E-RR-xN7" secondAttribute="bottom" id="49L-yN-CNC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="04E-RR-xN7" secondAttribute="trailing" id="7Lc-m5-EE5"/>
+                            <constraint firstItem="VpL-p5-MSd" firstAttribute="top" secondItem="iiT-N2-JPf" secondAttribute="bottom" constant="50" id="K0I-mI-o24"/>
+                            <constraint firstItem="VpL-p5-MSd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="R2q-GZ-ICG"/>
+                            <constraint firstItem="iiT-N2-JPf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TRZ-h1-0nW"/>
+                            <constraint firstItem="04E-RR-xN7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UHY-2N-5uu"/>
+                            <constraint firstItem="iiT-N2-JPf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VYd-kR-drH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VpL-p5-MSd" secondAttribute="trailing" id="nL9-7w-GAc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="iiT-N2-JPf" secondAttribute="top" id="phq-1l-AZL"/>
+                            <constraint firstItem="VpL-p5-MSd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tDV-x7-56d"/>
+                            <constraint firstItem="04E-RR-xN7" firstAttribute="top" secondItem="iiT-N2-JPf" secondAttribute="bottom" id="tLj-Ho-FEX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="charactersTableView" destination="VpL-p5-MSd" id="isY-C4-4AK"/>
+                        <outlet property="filterView" destination="04E-RR-xN7" id="QwK-No-LJ9"/>
+                        <outlet property="searchBar" destination="iiT-N2-JPf" id="bss-CS-dAL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="-139.28571428571428"/>
         </scene>
     </scenes>
 </document>
